@@ -1,0 +1,79 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int ss(int n)
+{
+	int t = 1;
+	for (int i = 2; i < sqrt(n) + 1; i++)
+	{
+		if (n % i == 0)
+		{
+			t = 0;
+			break;
+		}
+	}
+	return t;
+}
+void f()
+{
+	int g = 0;
+	for (int i = 301; i <= 400; i++)
+	{
+		if (ss(i) == 1)
+		{
+			cout << i << " ";
+			g++;
+		}
+		if (g == 10)
+		{
+			cout << endl;
+			g = 0;
+		}
+	}
+
+}
+int g(int i)
+{
+	int a = i, b, c, d;
+	b = a % 10;
+	c = a / 10 % 10;
+	d = a / 100;
+	if (a == b * b * b + c * c * c + d * d * d)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+int main()
+{
+	int k = 0;
+	for (int i = 301; i <= 400; i++)
+	{
+		cout << i << " ";
+		k++;
+		if (k == 10)
+		{
+			cout << endl;
+			k = 0;
+		}
+	}
+	f();
+	cout << endl;
+	int l = 0;
+	for (int i = 301; i <= 400; i++)
+	{
+		if (g(i) == 1)
+		{
+			cout << i<<" ";
+			l++;
+		}
+		if (l == 10)
+		{
+			cout << endl;
+			l = 0;
+		}
+	}
+}
